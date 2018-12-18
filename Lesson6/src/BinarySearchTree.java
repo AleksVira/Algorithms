@@ -185,8 +185,13 @@ public class BinarySearchTree<Key extends Comparable<Key>, Value> {
     }
 
     private boolean isBalanced(Node node) {
-        if (node.height == 0) {
+        if (node == null || node.height == 0) {
             return true;
-        } else return Math.abs(height(node.left) - height(node.right)) <= 1;
+        } else if (!isBalanced(node.left) || !isBalanced(node.right) || (Math.abs(height(node.left) - height(node.right)) > 1)) {
+            return false;
+        } else {
+            return true;
+        }
+//        } else return Math.abs(height(node.left) - height(node.right)) <= 1;
     }
 }
