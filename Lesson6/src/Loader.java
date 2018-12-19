@@ -7,7 +7,7 @@ public class Loader {
 //        int[] testArray = new int[]{50, 25, 75};
 //        int counter = 0;
 //        final int treesQuantity = 1;
-        final int treesQuantity = 2000000;
+        final int treesQuantity = 20000;
         int balancedTreesCounter = 0;
         for (int i = 0; i < treesQuantity; i++) {
             BinarySearchTree<Integer, Integer> tree = new BinarySearchTree<>();
@@ -15,8 +15,8 @@ public class Loader {
             while (tree.height() < 6) {
 //                Integer newKey = testArray[counter];
 //                counter++;
-                Integer newKey = (int) (Math.random() * 200);
-//                Integer newKey = (int) (Math.random() * 200) - 100;
+//                Integer newKey = (int) (Math.random() * 200);
+                Integer newKey = (int) (Math.random() * 200) - 100;
                 Integer newVal = newKey * newKey;
                 System.out.println("New Node = " + newKey + " :: " + newVal);
                 tree.put(newKey, newVal);
